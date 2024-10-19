@@ -2,10 +2,10 @@ import React from 'react';
 
 function Contact() {
   return (
-    <section id="contact">
+    <div className="component-container">
       <h2>Contact Me</h2>
-      <p>Email: tatenokay@gmail.com</p>
-    </section>
+      <p>Email: alejandra puerchambud2@gmail.com</p>
+    </div>
   );
 }
 

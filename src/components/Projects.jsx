@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/main.css';
 
 function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Llamada a la API (aquí puedes integrar cualquier API)
+    
     fetch('https://api.github.com/users/1085332096/repos')
       .then(response => response.json())
       .then(data => setProjects(data));
   }, []);
 
   return (
-    <section id="projects">
+    <div className="component-container">
       <h2>My Projects</h2>
       <ul>
         {projects.map(project => (
@@ -22,7 +23,7 @@ function Projects() {
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 }
 

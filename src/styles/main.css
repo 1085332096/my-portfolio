@@ -25,4 +25,14 @@ body {
   h1, h2 {
     color: #333;
   }
-  
+  .component-container {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5 px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.component-container h2 {
+    color: #333;
+}
