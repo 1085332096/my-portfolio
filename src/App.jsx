@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Education from './components/Education';
 import './styles/main.css';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
       {/* Cada sección debe tener el ID correspondiente */}
       <section id="about">
         <About />
+      </section>
+      <section id="education">
+        <Education />
       </section>
       <section id="projects">
         <Projects />

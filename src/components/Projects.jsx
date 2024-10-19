@@ -13,7 +13,7 @@ function Projects() {
 
   return (
     <div className="component-container">
-      <h2>My Projects</h2>
+      <h2>Mis Proyectos</h2>
       <ul>
         {projects.map(project => (
           <li key={project.id}>
