@@ -1,7 +1,0 @@
-comandos
-npm create vite@latest
-Project name: … my-portfolio
-Select a framework: › React
- Select a variant: › JavaScript
- cd my-portfolio
- npm install
