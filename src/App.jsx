@@ -2,30 +2,37 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
-import Contact from './components/Contact';
 import Education from './components/Education';
-import './styles/main.css';
+import Experience from './components/Experience';
+import Avatar from './components/Avatar';
+import './styles/main.css'; // Archivo CSS para los estilos
 
 function App() {
   return (
     <div>
       <Navbar />
-      {/* Cada sección debe tener el ID correspondiente */}
-      <section id="about">
-        <About />
-      </section>
-      <section id="education">
-        <Education />
-      </section>
-      <section id="projects">
-        <Projects />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+      <div className="main-container">
+        <div className="left-column">
+          <section id="about">
+            <Avatar />
+            <About />
+          </section>
+        </div>
+        <div className="right-column">
+          <section id="education">
+            <Education />
+          </section>
+          <section id="experience">
+            <Experience />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+        </div>
+      </div>
+      
     </div>
   );
 }
 
 export default App;
-

@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #48525d; /* Color principal */
-  --secondary-color: #6a71bf; /* Color secundario */
-  --background-color: #bebecb; /* Color de fondo */
-  --text-color: #333; /* Color del texto */
-  --header-color: #FFFFFF; /* Color del encabezado */
-  --border-color: #D1D1D1; /* Color del borde */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Color de sombra */
+  --primary-color: #034f9c; 
+  --secondary-color: #afe4ed; 
+  --background-color: #f9f7f8; 
+  --text-color: #363434; 
+  --header-color: #7da6e5; 
+  --border-color: #0c0c0c; 
+  --shadow-color: rgb(138, 213, 238); 
 }
 
 body {
@@ -25,38 +25,139 @@ nav ul {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  margin: 0; /* Agregamos margin 0 para eliminar espacio adicional */
+  margin: 0;
 }
 
 nav ul li a {
   color: var(--header-color);
   text-decoration: none;
-  padding: 10px 15px; /* Añadido espacio alrededor de los enlaces */
-  transition: background-color 0.3s; /* Transición para efectos hover */
+  padding: 10px 15px;
+  transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-  background-color: var(--secondary-color); /* Efecto hover */
+  background-color: var(--secondary-color);
 }
 
-section {
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
-  margin: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: var(--header-color); 
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px;
+  height: auto; 
+  margin-bottom: 20px; 
+}
+
+.avatar-image {
+  width: 100%;
+  height: 180px; /* Tamaño fijo de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+  border-radius: 50%; /* Hace que los bordes de la imagen sean redondeados */
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+}
+
+.contact-links {
+  display: flex;
+  justify-content: space-around; /* Distribuye iconos equitativamente */
+  width: 100%; /* Asegura que los iconos ocupen todo el ancho del contenedor */
+  margin-top: 10px; /* Espacio superior */
+}
+
+.contact-links a {
+  color: var(--text-color);
+  margin: 0 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-links a:hover {
+  transform: scale(1.2); /* Efecto de agrandar iconos al hacer hover */
+}
+
+.component-container {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  text-align: justify;
 }
 
 h1, h2 {
   color: var(--text-color);
 }
 
-.component-container {
-  background-color: #deecf7; /* Puedes cambiarlo o hacer uso de una variable */
-  border: 1px solid var(--border-color);
-  border-radius: 5px; /* Corregido de 5 px a 5px */
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 4px 8px var(--shadow-color);
-}
-
 .component-container h2 {
   color: var(--text-color);
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Cambia la dirección del layout a columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+
+  .left-column, .right-column {
+    width: 100%; /* Hacer que las columnas ocupen el 100% del ancho */
+    max-width: none; /* Elimina la restricción de ancho en pantallas pequeñas */
+    margin: 0 0 20px 0; /* Añade espacio entre las columnas */
+  }
+
+  .avatar-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px; /* Ajustar espacio debajo del avatar */
+  }
+
+  .component-container {
+    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+  }
+  .item {
+    margin-bottom: 10px; /* Ajusta el espaciado entre items */
+  }
+  
+  .item h3 {
+    margin-top: 0; /* Elimina margen superior en el encabezado */
+  }
+  
+  .item p {
+    margin: 2px 0; /* Ajusta el espaciado de los párrafos dentro de los items */
+  }
+  
 }
