@@ -6,7 +6,6 @@
   --header-color: #7aa7ea; 
   --border-color: #0c0c0c; 
   --shadow-color: rgb(96, 195, 228); 
-  
 }
 
 body {
@@ -15,34 +14,45 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 nav {
   background-color: var(--primary-color);
+  padding: 10px 0;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
-  padding: 10px;
+  padding: 0;
   margin: 0;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 5px;
 }
 
 nav ul li a {
-  color: #101010(--header-color);
+  color: #101010;
   text-decoration: none;
   padding: 10px 15px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
 }
 
 nav ul li a:hover {
   background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .main-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
   padding: 20px;
   margin: 0 auto;
@@ -63,6 +73,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 250px;
   max-width: 300px;
 }
 
@@ -70,6 +81,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 2;
 }
 
 .avatar-container {
@@ -80,34 +92,35 @@ nav ul li a:hover {
   background-color: var(--secondary-color);
   padding: 10px;
   border-radius: 10px;
-  width: 200px; /* Define un ancho fijo para el contenedor */
-  height: 200px; /* Define una altura fija para que sea cuadrado */
-  margin-bottom: 10px; 
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
 }
 
 .avatar-image {
-  width: 60%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-  height: 60%; /* Asegura que la imagen ocupe toda la altura del contenedor */
-  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
-  border-radius: 50%; /* Mantiene los bordes de la imagen redondeados */
-  margin-bottom: 10px; /* Espacio debajo de la imagen */
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .contact-links {
   display: flex;
-  justify-content: space-around; /* Distribuye iconos equitativamente */
-  width: 100%; /* Asegura que los iconos ocupen todo el ancho del contenedor */
-  margin-top: 10px; /* Espacio superior */
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .contact-links a {
   color: var(--text-color);
   margin: 0 10px;
   transition: transform 0.2s ease-in-out;
+  font-size: 1.2em;
 }
 
 .contact-links a:hover {
-  transform: scale(1.2); /* Efecto de agrandar iconos al hacer hover */
+  transform: scale(1.2);
 }
 
 .component-container {
@@ -121,44 +134,112 @@ nav ul li a:hover {
 
 h1, h2 {
   color: var(--text-color);
+  margin-bottom: 15px;
 }
 
 .component-container h2 {
   color: var(--text-color);
+  font-size: 1.5em;
 }
 
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
+.item {
+  margin-bottom: 15px;
+}
+
+.item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.item p {
+  margin: 5px 0;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1024px) {
   .main-container {
-    flex-direction: column; /* Cambia la dirección del layout a columna en pantallas pequeñas */
-    align-items: center; /* Centra los elementos verticalmente */
+    flex-direction: column;
+    align-items: center;
   }
 
   .left-column, .right-column {
-    width: 100%; /* Hacer que las columnas ocupen el 100% del ancho */
-    max-width: none; /* Elimina la restricción de ancho en pantallas pequeñas */
-    margin: 0 0 20px 0; /* Añade espacio entre las columnas */
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .main-container {
+    padding: 10px;
+  }
+
+  .left-column, .right-column {
+    margin: 5px 0;
+    padding: 15px;
   }
 
   .avatar-container {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 10px; /* Ajustar espacio debajo del avatar */
+    width: 150px;
+    height: 150px;
   }
 
   .component-container {
-    padding: 5px; /* Reduce el padding en pantallas pequeñas */
+    padding: 15px;
   }
-  .item {
-    margin-bottom: 10px; /* Ajusta el espaciado entre items */
+
+  .contact-links a {
+    font-size: 1em;
   }
-  
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
   .item h3 {
-    margin-top: 0; /* Elimina margen superior en el encabezado */
+    font-size: 1.1em;
   }
-  
-  .item p {
-    margin: 2px 0; /* Ajusta el espaciado de los párrafos dentro de los items */
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
   }
-  
+
+  .main-container {
+    padding: 5px;
+  }
+
+  .left-column, .right-column {
+    padding: 10px;
+  }
+
+  .avatar-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .component-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .item h3 {
+    font-size: 1em;
+  }
 }
