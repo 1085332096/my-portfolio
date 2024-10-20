@@ -1,11 +1,11 @@
 :root {
-  --color-primary: #2f855a; /* Verde oscuro */
-  --color-secondary: #38a169; /* Verde medio */
-  --color-background: #f0fff4; /* Fondo muy claro */
-  --color-text: #2d3748; /* Texto oscuro */
-  --color-text-light: #ffffff; /* Texto claro */
-  --color-card-background: #ffffff; /* Fondo de tarjeta blanco */
-  --color-card-hover: rgba(0, 0, 0, 0.1); /* Sombra de tarjeta */
+  --color-primary: #2f855a;
+  --color-secondary: #38a169;
+  --color-background: #f0fff4;
+  --color-text: #2d3748;
+  --color-text-light: #ffffff;
+  --color-card-background: #ffffff;
+  --color-card-hover: rgba(0, 0, 0, 0.1);
 }
 
 .portfolio {
@@ -160,6 +160,25 @@ h1, h2 {
   transform: translateY(-2px);
 }
 
+/* Sección de imágenes en línea */
+.image-gallery {
+  display: flex; /* Alinear imágenes en línea */
+  justify-content: center; /* Centrar imágenes horizontalmente */
+  margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+.gallery-image {
+  width: 50px; /* Tamaño fijo para pantallas grandes */
+  height: 50px; /* Mantener tamaño uniforme */
+  margin: 0 10px; /* Espaciado entre imágenes */
+  transition: transform 0.3s ease; /* Transición suave en hover */
+  cursor: pointer; /* Cambia el cursor en hover */
+}
+
+.gallery-image:hover {
+  transform: scale(1.1); /* Efecto hover */
+}
+
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column;
@@ -180,5 +199,11 @@ h1, h2 {
   
   .card {
     padding: 1rem;
+  }
+  
+  /* Cambiar tamaño de imágenes para pantallas pequeñas */
+  .gallery-image {
+    width: 40px; /* Tamaño más pequeño para pantallas pequeñas */
+    height: 40px;
   }
 }

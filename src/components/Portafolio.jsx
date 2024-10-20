@@ -1,4 +1,3 @@
-// frontend/src/components/Portafolio.jsx
 import { useEffect, useState } from 'react';
 import { Mail, Phone, Facebook, Github } from 'lucide-react';
 
@@ -10,7 +9,7 @@ export default function Portafolio() {
   const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
-    // Reemplaza 'tu-usuario' con tu nombre de usuario de GitHub
+    
     fetch('https://api.github.com/users/1085332096/repos')
       .then(response => response.json())
       .then(data => {
@@ -18,7 +17,7 @@ export default function Portafolio() {
       })
       .catch(error => console.error('Error fetching repositories:', error));
 
-    // Incrementar contador de visitas
+    
     setVisitCount(prevCount => prevCount + 1);
   }, []);
 
@@ -48,8 +47,7 @@ export default function Portafolio() {
         setSubmitMessage('Mensaje enviado con éxito.');
         setFormData({ name: '', message: '' }); // Limpiar el formulario
       } else {
-        const errorData = await response.json(); // Obtener detalles del error
-        setSubmitMessage(`Error al enviar el mensaje: ${errorData.message || 'Error desconocido.'}`);
+        setSubmitMessage('Error al enviar el mensaje.');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -81,9 +79,19 @@ export default function Portafolio() {
             <a href="https://github.com/1085332096" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github /></a>
           </div>
           <section id="about">
-            <h2>Acerca de mi</h2>
+            <h2>Acerca de mí</h2>
             <p>Hola, soy Alejandra, futura ingeniera informática que busca a través de su profesión contribuir a la solución de diversas problemáticas que se presentan en la actualidad enfocadas principalmente a las personas de escasos recursos.</p>
           </section>
+          
+          {/* Sección de imágenes */}
+          <section className="Habilidades">
+          <h2>Habilidades</h2>
+            <img src="/imagenes/logo.png" alt="Descripción 1" className="gallery-image" />
+            <img src="/imagenes/python.png" alt="Descripción 2" className="gallery-image" />
+            <img src="/imagenes/react.jpeg" alt="Descripción 3" className="gallery-image" />
+            <img src="/imagenes/javascript.png" alt="Descripción 4" className="gallery-image" />
+          </section>
+
           <div className="visit-counter">
             <p>Visitas: {visitCount}</p>
             <button onClick={handleShowDateTime}>Mostrar Fecha y Hora</button>
