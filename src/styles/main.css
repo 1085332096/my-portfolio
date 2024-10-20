@@ -1,11 +1,12 @@
 :root {
-  --primary-color: #5d55e8; 
+  --primary-color: #8b78217e; 
   --secondary-color: #afe4ed; 
   --background-color: #f9f7f8; 
   --text-color: #363434; 
   --header-color: #7aa7ea; 
   --border-color: #0c0c0c; 
   --shadow-color: rgb(96, 195, 228); 
+  
 }
 
 body {
@@ -79,17 +80,17 @@ nav ul li a:hover {
   background-color: var(--secondary-color);
   padding: 10px;
   border-radius: 10px;
-  width: 180px; /* Define un ancho fijo para el contenedor */
-  height: 180px; /* Define una altura fija para que sea cuadrado */
-  margin-bottom: 20px; 
+  width: 200px; /* Define un ancho fijo para el contenedor */
+  height: 200px; /* Define una altura fija para que sea cuadrado */
+  margin-bottom: 10px; 
 }
 
 .avatar-image {
-  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-  height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+  width: 60%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 60%; /* Asegura que la imagen ocupe toda la altura del contenedor */
   object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
   border-radius: 50%; /* Mantiene los bordes de la imagen redondeados */
-  margin-bottom: 20px; /* Espacio debajo de la imagen */
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
 }
 
 .contact-links {
@@ -146,7 +147,7 @@ h1, h2 {
   }
 
   .component-container {
-    padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    padding: 5px; /* Reduce el padding en pantallas pequeñas */
   }
   .item {
     margin-bottom: 10px; /* Ajusta el espaciado entre items */

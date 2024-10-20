@@ -4,9 +4,10 @@ function Navbar() {
   return (
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#Experiencia">Experience</a></li>
+        <li><a href="#Projects">Projects</a></li>
         
       </ul>
     </nav>
