@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #034f9c; 
+  --primary-color: #5d55e8; 
   --secondary-color: #afe4ed; 
   --background-color: #f9f7f8; 
   --text-color: #363434; 
-  --header-color: #7da6e5; 
+  --header-color: #7aa7ea; 
   --border-color: #0c0c0c; 
-  --shadow-color: rgb(138, 213, 238); 
+  --shadow-color: rgb(96, 195, 228); 
 }
 
 body {
@@ -29,7 +29,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--header-color);
+  color: #101010(--header-color);
   text-decoration: none;
   padding: 10px 15px;
   transition: background-color 0.3s;
@@ -79,16 +79,16 @@ nav ul li a:hover {
   background-color: var(--secondary-color);
   padding: 10px;
   border-radius: 10px;
-  width: 300px;
-  height: auto; 
+  width: 180px; /* Define un ancho fijo para el contenedor */
+  height: 180px; /* Define una altura fija para que sea cuadrado */
   margin-bottom: 20px; 
 }
 
 .avatar-image {
-  width: 100%;
-  height: 180px; /* Tamaño fijo de la imagen */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
   object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
-  border-radius: 50%; /* Hace que los bordes de la imagen sean redondeados */
+  border-radius: 50%; /* Mantiene los bordes de la imagen redondeados */
   margin-bottom: 20px; /* Espacio debajo de la imagen */
 }
 
