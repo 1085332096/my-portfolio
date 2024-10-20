@@ -1,3 +1,4 @@
+// frontend/src/components/Portafolio.jsx
 import { useEffect, useState } from 'react';
 import { Mail, Phone, Facebook, Github } from 'lucide-react';
 
@@ -47,7 +48,8 @@ export default function Portafolio() {
         setSubmitMessage('Mensaje enviado con éxito.');
         setFormData({ name: '', message: '' }); // Limpiar el formulario
       } else {
-        setSubmitMessage('Error al enviar el mensaje.');
+        const errorData = await response.json(); // Obtener detalles del error
+        setSubmitMessage(`Error al enviar el mensaje: ${errorData.message || 'Error desconocido.'}`);
       }
     } catch (error) {
       console.error('Error:', error);

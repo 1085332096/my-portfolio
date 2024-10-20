@@ -1,19 +1,22 @@
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+// Importa las rutas
+const formRoutes = require('./routes/form');
 
-app.post('/api/form', (req, res) => {
-  const { name, message } = req.body;
-  console.log(`Nombre: ${name}, Mensaje: ${message}`);
-  res.status(200).json({ success: true });
+// Middleware para parsear JSON
+app.use(express.json());
+
+// Usa las rutas
+app.use('/api/form', formRoutes);
+
+// Middleware para manejar rutas no encontradas
+app.use((req, res) => {
+    res.status(404).send('Ruta no encontrada');
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+// Inicia el servidor
+app.listen(port, () => {
+    console.log(`Servidor escuchando en http://localhost:${port}`);
 });
